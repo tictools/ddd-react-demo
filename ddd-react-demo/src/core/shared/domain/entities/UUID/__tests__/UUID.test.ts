@@ -1,0 +1,25 @@
+import { v4 as uuidv4 } from "uuid";
+import { describe, expect, it } from "vitest";
+import { UUID } from "../UUID";
+
+describe("UUID ValueObject", () => {
+  const ERRORS_LIST = ["Invalid UUID"];
+
+  it("should validate a given valid UUID", () => {
+    const validUUID = uuidv4();
+
+    const result = UUID.create(validUUID);
+
+    expect(result.ok).toBe(true);
+    expect(result.value).toBe(validUUID);
+  });
+
+  it("should fail for an invalid UUID", () => {
+    const invalidUUID = "invalid-uuid";
+
+    const result = UUID.create(invalidUUID);
+
+    expect(result.ok).toBe(false);
+    expect(result.errors).toEqual(ERRORS_LIST);
+  });
+});
