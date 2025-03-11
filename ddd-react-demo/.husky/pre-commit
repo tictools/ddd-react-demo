@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo ++++++++++++++++++++++++++++++++++
+echo 🚀 Running lint/staged...
+echo ++++++++++++++++++++++++++++++++++
+npx lint-staged
