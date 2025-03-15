@@ -14,7 +14,7 @@ function create(status: string): OperationResult<TaskStatus> {
 
   if (!isValid)
     return Result.fail([
-      `Invalid status. Expected status: ${taskStatusValues.join(" | ")}`,
+      `invalid value. Expected: ${taskStatusValues.join(" | ")}`,
     ]);
 
   return Result.ok(status as TaskStatus);

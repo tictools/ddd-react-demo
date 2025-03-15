@@ -9,8 +9,9 @@ describe("Note.create", () => {
     title: "Valid Title",
     description: "Valid Description",
     status: "pending" as TaskStatus,
-    dueDate: new Date(Date.now() + 1000),
+    dueDate: Date.now() + 1000,
     userUUID: "123e4567-e89b-12d3-a456-426614174000",
+    createdAt: Date.now(),
   };
 
   it("should return success when all properties are valid", () => {
@@ -51,7 +52,7 @@ describe("Note.create", () => {
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "title: Title cannot be empty",
+      "title: value cannot be empty",
     ]);
   });
 
@@ -65,7 +66,7 @@ describe("Note.create", () => {
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "description: Description cannot be empty",
+      "description: value cannot be empty",
     ]);
   });
 
@@ -79,21 +80,21 @@ describe("Note.create", () => {
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "status: Invalid status. Expected status: pending | in-progress | completed",
+      "status: invalid value. Expected: pending | in-progress | completed",
     ]);
   });
 
   it("should return failure when dueDate is invalid", () => {
     const props = {
       ...defaultProps,
-      dueDate: new Date(Date.now() - 1000),
+      dueDate: Date.now() - 1000,
     };
 
     const result = Task.create(props);
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "dueDate: Due date cannot be before the creation date",
+      "dueDate: value cannot be set before the creation date",
     ]);
   });
 
@@ -122,7 +123,7 @@ describe("Note.create", () => {
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "title: Title cannot be empty",
+      "title: value cannot be empty",
       "userUuid: Invalid UUID",
     ]);
   });

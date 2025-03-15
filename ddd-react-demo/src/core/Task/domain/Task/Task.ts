@@ -8,6 +8,7 @@ import { UUID } from "../../../shared/domain/entities/UUID/UUID";
 import { Description } from "../valueObjects/Description";
 import { DueDate } from "../valueObjects/DueDate";
 import { Status } from "../valueObjects/Status";
+import { TimestampDate } from "../valueObjects/TimestampDate";
 import { Title } from "../valueObjects/Title";
 import { type TaskValues } from "./TaskValues.d";
 
@@ -33,7 +34,7 @@ function create(props: TaskValues): OperationResult<TaskValues, string[]> {
     { field: "status", result: Status.create(props.status) },
     { field: "dueDate", result: DueDate.create(props.dueDate) },
     { field: "userUuid", result: UUID.create(props.userUUID) },
-    // { field: "createdAt", result: Number.create(props.dueDate) },
+    { field: "createdAt", result: TimestampDate.create(props.dueDate) },
   ]);
 
   if (taskPropsResult.isFail) return Result.fail(taskPropsResult.errors);

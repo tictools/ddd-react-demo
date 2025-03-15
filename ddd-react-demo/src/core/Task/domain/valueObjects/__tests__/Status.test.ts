@@ -5,7 +5,7 @@ import { Status } from "../Status";
 
 describe("createStatus", () => {
   const ERRORS_LIST = [
-    "Invalid status. Expected status: pending | in-progress | completed",
+    "invalid value. Expected: pending | in-progress | completed",
   ];
 
   it("should return success for valid status 'pending'", () => {

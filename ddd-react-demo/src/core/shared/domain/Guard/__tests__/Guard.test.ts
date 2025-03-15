@@ -1,14 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { Result } from "../../Result/Result";
+import { Result } from "../../../../shared/domain/Result/Result";
 import { Guard } from "../Guard";
 
 describe("Guard", () => {
   describe("againstNullOrUndefined", () => {
     it("should return success when all checks pass", () => {
-      const checks = [
-        { field: "name", result: Result.ok("John Doe") },
-        { field: "age", result: Result.ok(30) },
-      ];
+      const checks = [{ field: "timestamp", result: Result.ok(1672531200000) }];
 
       const result = Guard.againstNullOrUndefined(checks);
 
@@ -17,12 +14,11 @@ describe("Guard", () => {
       expect(result.errors).toHaveLength(0);
     });
 
-    it("should return failure when any check fails", () => {
+    it("should return failure when the check fails", () => {
       const checks = [
-        { field: "name", result: Result.ok("John Doe") },
         {
-          field: "age",
-          result: Result.fail(["Age cannot be null or undefined"]),
+          field: "timestamp",
+          result: Result.fail(["Timestamp must be a number"]),
         },
       ];
 
@@ -31,18 +27,18 @@ describe("Guard", () => {
       expect(result.isSuccess).toBe(false);
       expect(result.isFail).toBe(true);
       expect(result.errors).toHaveLength(1);
-      expect(result.errors[0]).toBe("age: Age cannot be null or undefined");
+      expect(result.errors[0]).toBe("timestamp: Timestamp must be a number");
     });
 
     it("should return multiple errors when multiple checks fail", () => {
       const checks = [
         {
-          field: "name",
-          result: Result.fail(["Name cannot be null or undefined"]),
+          field: "timestamp",
+          result: Result.fail(["Timestamp must be a number"]),
         },
         {
-          field: "age",
-          result: Result.fail(["Age cannot be null or undefined"]),
+          field: "date",
+          result: Result.fail(["Date cannot be null or undefined"]),
         },
       ];
 
@@ -51,8 +47,8 @@ describe("Guard", () => {
       expect(result.isSuccess).toBe(false);
       expect(result.isFail).toBe(true);
       expect(result.errors).toHaveLength(2);
-      expect(result.errors).toContain("name: Name cannot be null or undefined");
-      expect(result.errors).toContain("age: Age cannot be null or undefined");
+      expect(result.errors).toContain("timestamp: Timestamp must be a number");
+      expect(result.errors).toContain("date: Date cannot be null or undefined");
     });
   });
 });

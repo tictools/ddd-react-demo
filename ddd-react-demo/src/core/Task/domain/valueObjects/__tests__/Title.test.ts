@@ -4,7 +4,7 @@ import { Result } from "../../../../shared/domain/Result/Result";
 import { Title } from "../Title";
 
 describe("Title", () => {
-  const ERRORS_LIST = ["Title cannot be empty"];
+  const ERRORS_LIST = ["value cannot be empty"];
 
   it("should return success when title has content", () => {
     const result = Title.create("Valid Title");

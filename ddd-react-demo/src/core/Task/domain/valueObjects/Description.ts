@@ -8,7 +8,7 @@ import type { ValueObject } from "../../../shared/domain/valueObjects/types";
 function create(description: string): OperationResult<string> {
   const isValid = hasContent(description);
 
-  if (!isValid) return Result.fail(["Description cannot be empty"]);
+  if (!isValid) return Result.fail(["value cannot be empty"]);
 
   return Result.ok(description);
 }

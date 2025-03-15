@@ -4,7 +4,7 @@ import { Result } from "../../../../shared/domain/Result/Result";
 import { Description } from "../Description";
 
 describe.only("createDescription", () => {
-  const ERRORS_LIST = ["Description cannot be empty"];
+  const ERRORS_LIST = ["value cannot be empty"];
 
   it("should return success when description has content", () => {
     const description = "This is a valid description";
