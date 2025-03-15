@@ -1,0 +1,10 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+echo ++++++++++++++++++++++++++++++++++
+echo 🚀 Running lint/staged...
+echo ++++++++++++++++++++++++++++++++++
+npx lint-staged
+echo ++++++++++++++++++++++++++++++++++
+echo 🚀 Running test suite...
+echo ++++++++++++++++++++++++++++++++++
+npm test
