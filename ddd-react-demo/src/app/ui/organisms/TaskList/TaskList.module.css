@@ -73,25 +73,21 @@
 .task__status {
   display: inline-block;
   padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: capitalize;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
 }
 
 .task__status--pending {
-  background-color: #fef3c7;
-  color: #92400e;
+  background-color: #f59e0b;
 }
 
 .task__status--in-progress {
-  background-color: #e0f2fe;
-  color: #0369a1;
+  background-color: #0284c7;
 }
 
 .task__status--done {
-  background-color: #d1fae5;
-  color: #065f46;
+  background-color: #10b981;
 }
 
 .loading__text,

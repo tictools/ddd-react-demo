@@ -19,6 +19,7 @@ export const useCreateTaskForm = () => {
       dueDate: new Date(formData.get("dueDate") as string).getTime(),
       userUUID: "1ee9333c-4133-4b1b-871a-fd8dc223eb24", // Assuming userUUID is set elsewhere
     };
+    console.log("🚀 ~ useCreateTaskForm ~ partialNewTask:", partialNewTask);
 
     executeCreateTaskUseCase(partialNewTask);
 

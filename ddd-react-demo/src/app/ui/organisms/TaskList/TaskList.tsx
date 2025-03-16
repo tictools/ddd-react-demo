@@ -1,5 +1,6 @@
 import { TaskValues } from "core/Task/domain/Task/TaskValues";
 import { useGetAllTasksCase } from "../../../api/Task/queries/useGetAllTasksCase";
+import { classNames } from "../../../services/CSSService/CSSService";
 import { DateText } from "../../atoms/DataText/DataText";
 import { HeadingTertiary } from "../../atoms/HeadingTertiary/HeadingTertiary";
 import { List } from "../../atoms/List/List";
@@ -14,19 +15,12 @@ export const TaskList = () => {
 
   if (error) return <p className={styles["error-text"]}>{error.toString()}</p>;
 
-  const getStatusClassName = (status: string) => {
-    const baseClass = styles["task__status"];
-    switch (status) {
-      case "pending":
-        return `${baseClass} ${styles["task__status--pending"]}`;
-      case "inProgress":
-        return `${baseClass} ${styles["task__status--in-progress"]}`;
-      case "done":
-        return `${baseClass} ${styles["task__status--done"]}`;
-      default:
-        return baseClass;
-    }
-  };
+  const getStatusClassName = (status: string) =>
+    classNames(styles["task__status"], {
+      [styles["task__status--pending"]]: status === "pending",
+      [styles["task__status--in-progress"]]: status === "in-progress",
+      [styles["task__status--done"]]: status === "done",
+    });
 
   return (
     <div className={styles["container"]}>
@@ -36,6 +30,7 @@ export const TaskList = () => {
         renderTo={(task) => (
           <li key={task.id} className={styles["task__item"]}>
             <div className={styles["task__header"]}>
+              <span className={getStatusClassName(task.status)}></span>
               <h4 className={styles["task__title"]}>{task.title}</h4>
             </div>
             <p className={styles["task__description"]}>{task.description}</p>
@@ -56,9 +51,6 @@ export const TaskList = () => {
                   />
                 </span>
               </div>
-              <span className={getStatusClassName(task.status)}>
-                {task.status}
-              </span>
             </div>
           </li>
         )}
