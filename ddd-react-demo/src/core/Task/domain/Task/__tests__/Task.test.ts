@@ -39,7 +39,9 @@ describe("Note.create", () => {
     const result = Task.create(props);
 
     expect(result.ok).toBe(false);
-    expect(!Result.isOk(result) && result.errors).toEqual(["id: Invalid UUID"]);
+    expect(!Result.isOk(result) && result.errors).toEqual([
+      "id: value has invalid format",
+    ]);
   });
 
   it("should return failure when title is empty", () => {
@@ -108,7 +110,7 @@ describe("Note.create", () => {
 
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
-      "userUuid: Invalid UUID",
+      "userUuid: value has invalid format",
     ]);
   });
 
@@ -124,7 +126,7 @@ describe("Note.create", () => {
     expect(result.ok).toBe(false);
     expect(!Result.isOk(result) && result.errors).toEqual([
       "title: value cannot be empty",
-      "userUuid: Invalid UUID",
+      "userUuid: value has invalid format",
     ]);
   });
 });

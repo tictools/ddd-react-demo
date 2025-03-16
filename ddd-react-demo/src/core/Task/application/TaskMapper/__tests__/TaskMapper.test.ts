@@ -51,7 +51,7 @@ describe("TaskMapper", () => {
     }) as FailureResult<string[]>;
 
     expect(result.ok).toBe(false);
-    expect(result.errors).toContain("title: Title cannot be empty");
+    expect(result.errors).toContain("title: value cannot be empty");
   });
 
   it("should convert TaskValues to TaskDTO correctly", () => {
