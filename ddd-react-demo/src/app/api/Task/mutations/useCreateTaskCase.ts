@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useCaseRegistry } from "../../../config/useCaseRegistry";
 
-export const useCreateTask = () => {
+export const useCreateTaskCase = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
