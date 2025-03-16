@@ -110,11 +110,11 @@
     max-width: 36rem;
   }
 
-  .dateInput {
+  .date__input {
     max-width: 16rem;
   }
 
-  .submitButton {
+  .submit__button {
     align-self: flex-start;
     min-width: 8rem;
   }
