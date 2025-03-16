@@ -3,8 +3,8 @@
 echo ++++++++++++++++++++++++++++++++++
 echo 🚀 Running lint/staged...
 echo ++++++++++++++++++++++++++++++++++
-npx lint-staged
+npm run lint:staged
 echo ++++++++++++++++++++++++++++++++++
 echo 🚀 Running test suite...
 echo ++++++++++++++++++++++++++++++++++
-npm test
+npm run test:once

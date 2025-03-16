@@ -8,7 +8,9 @@
     "dev:server": "node ./server/generateDbJson.cjs && npx json-server ./server/db.json",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:staged": "npx lint-staged",
     "test": "vitest",
+    "test:once": "vitest --run",
     "preview": "vite preview",
     "prepare": "husky && husky install"
   },
