@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   max-width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
   margin: 0.5rem 0 1.5rem;
 }
 
@@ -52,7 +52,7 @@
   resize: vertical;
 }
 
-.submitButton {
+.submit__button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   background-color: #4f46e5;
@@ -64,16 +64,16 @@
   transition: background-color 0.2s ease;
 }
 
-.submitButton:hover {
+.submit__button:hover {
   background-color: #4338ca;
 }
 
-.submitButton:focus {
+.submit__button:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.4);
 }
 
-.errorList {
+.error__list {
   margin-top: 1rem;
   padding: 0.75rem;
   background-color: #fee2e2;
@@ -83,18 +83,18 @@
   list-style-position: inside;
 }
 
-.errorItem {
+.error__item {
   margin-bottom: 0.25rem;
 }
 
-.errorItem:last-child {
+.error__item:last-child {
   margin-bottom: 0;
 }
 
 /* Tablet and above */
 @media (min-width: 640px) {
   .container {
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     max-width: 32rem;
   }
 

@@ -59,15 +59,15 @@ export const TaskForm = () => {
           />
         </div>
 
-        <button type="submit" className={styles["submitButton"]}>
+        <button type="submit" className={styles["submit__button"]}>
           Create Task
         </button>
       </form>
 
       {error && (
-        <ul className={styles["errorList"]}>
+        <ul className={styles["error__list"]}>
           {(error as unknown as string[]).map((errorMessage: string, index) => (
-            <li key={index} className={styles["errorItem"]}>
+            <li key={index} className={styles["error__item"]}>
               {errorMessage}
             </li>
           ))}
