@@ -12,20 +12,6 @@ import { TimestampDate } from "../valueObjects/TimestampDate";
 import { Title } from "../valueObjects/Title";
 import { type TaskValues } from "./TaskValues.d";
 
-// export type TaskValues = {
-//   id: string;
-//   title: string;
-//   description: string;
-//   status: TaskStatus;
-//   dueDate: number;
-//   createdAt: number;
-//   userUUID: string;
-// };
-
-// export type PartialTaskValues = Omit<TaskValues, "id" | "createdAt">;
-
-// TODO: think about createdAt (entity || VO?)
-
 function create(props: TaskValues): OperationResult<TaskValues, string[]> {
   const taskPropsResult = Guard.againstNullOrUndefined([
     { field: "id", result: UUID.create(props.id) },
