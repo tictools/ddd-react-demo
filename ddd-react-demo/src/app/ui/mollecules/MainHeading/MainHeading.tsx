@@ -1,5 +1,5 @@
-import { HeadingPrimary } from "../../atoms/HeadingPrimary/HeadingPrimary";
-import { HeadingSecondary } from "../../atoms/HeadingSecondary/HeadingSecondary";
+import { Heading1 } from "../../atoms/Heading1/Heading1";
+import { Heading2 } from "../../atoms/Heading2/Heading2";
 
 type MainHeadingProps = {
   title: string;
@@ -9,8 +9,8 @@ type MainHeadingProps = {
 export const MainHeading = ({ title, subtitle }: MainHeadingProps) => {
   return (
     <header>
-      <HeadingPrimary>{title}</HeadingPrimary>
-      <HeadingSecondary>{subtitle}</HeadingSecondary>
+      <Heading1>{title}</Heading1>
+      <Heading2>{subtitle}</Heading2>
     </header>
   );
 };

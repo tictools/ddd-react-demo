@@ -1,4 +1,4 @@
-import { HeadingTertiary } from "../../atoms/HeadingTertiary/HeadingTertiary";
+import { Heading3 } from "../../atoms/Heading3/Heading3";
 import { useCreateTaskForm } from "./hooks/useCreateTaskForm";
 
 import styles from "./TaskForm.module.css";
@@ -8,7 +8,7 @@ export const TaskForm = () => {
 
   return (
     <div className={styles["container"]}>
-      <HeadingTertiary>Create a new Task</HeadingTertiary>
+      <Heading3>Create a new Task</Heading3>
       <form onSubmit={handleCreateNewTaskUseCase} className={styles["form"]}>
         <div className={styles["form-group"]}>
           <label className={styles["label"]} htmlFor="title">

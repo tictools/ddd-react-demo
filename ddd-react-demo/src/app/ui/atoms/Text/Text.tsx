@@ -1,5 +1,8 @@
 type TextProps = {
+  customClassName: string;
   content: string;
 };
 
-export const Text = ({ content }: TextProps) => <p>{content}</p>;
+export const Text = ({ content, customClassName }: TextProps) => (
+  <p className={customClassName}>{content}</p>
+);

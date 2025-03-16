@@ -1,15 +1,13 @@
 import { render } from "@testing-library/react";
 import { describe, it } from "vitest";
-import { HeadingTertiary } from "../HeadingTertiary";
+import { Heading3 } from "../Heading3";
 
-describe("HeadingTertiary", () => {
+describe("Heading3", () => {
   const testText = "Test Tertiary Heading";
   const EXPECTED_TAG_NAME = "H3";
 
   it("renders an h3 tag", async () => {
-    const { findByText } = render(
-      <HeadingTertiary>{testText}</HeadingTertiary>
-    );
+    const { findByText } = render(<Heading3>{testText}</Heading3>);
 
     const h3 = await findByText(testText);
 
@@ -17,17 +15,13 @@ describe("HeadingTertiary", () => {
   });
 
   it("renders without crashing", async () => {
-    const { findByText } = render(
-      <HeadingTertiary>{testText}</HeadingTertiary>
-    );
+    const { findByText } = render(<Heading3>{testText}</Heading3>);
 
     await findByText(testText);
   });
 
   it("displays the correct children", async () => {
-    const { findByText } = render(
-      <HeadingTertiary>{testText}</HeadingTertiary>
-    );
+    const { findByText } = render(<Heading3>{testText}</Heading3>);
 
     await findByText(testText);
   });
