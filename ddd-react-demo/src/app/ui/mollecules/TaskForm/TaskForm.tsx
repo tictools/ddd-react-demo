@@ -3,6 +3,8 @@ import { type TaskStatus } from "../../../../core/Task/domain/valueObjects/Statu
 import { useCreateTaskCase } from "../../../api/Task/mutations/useCreateTaskCase";
 import { HeadingTertiary } from "../../atoms/HeadingTertiary/HeadingTertiary";
 
+import styles from "./TaskForm.module.css";
+
 export const TaskForm = () => {
   const { mutate: executeCreateTaskUseCase, error } = useCreateTaskCase();
 
@@ -27,43 +29,72 @@ export const TaskForm = () => {
   };
 
   return (
-    <>
-      <div>
-        <HeadingTertiary>Create a new Task</HeadingTertiary>
-        <form
-          onSubmit={handleCreateNewTaskUseCase}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <label>
+    <div className={styles["container"]}>
+      <HeadingTertiary>Create a new Task</HeadingTertiary>
+      <form onSubmit={handleCreateNewTaskUseCase} className={styles["form"]}>
+        <div className={styles["form-group"]}>
+          <label className={styles["label"]} htmlFor="title">
             Title
-            <input type="text" name="title" id="title" required />
           </label>
-          <label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            className={styles["input"]}
+            required
+          />
+        </div>
+
+        <div className={styles["form-group"]}>
+          <label className={styles["label"]} htmlFor="description">
             Description
-            <textarea name="description" id="description" required />
           </label>
-          <label>
+          <textarea
+            name="description"
+            id="description"
+            className={styles["textarea"]}
+            required
+          />
+        </div>
+
+        <div className={styles["form-group"]}>
+          <label className={styles["label"]} htmlFor="status">
             Status
-            <select name="status" id="status">
-              <option value="pending">pending</option>
-              <option value="inProgress">in progress</option>
-              <option value="done">done</option>
-            </select>
-            <input type="date" name="dueDate" id="dueDate" required />
-            <input type="submit" value="Create task" />
           </label>
-        </form>
-      </div>
+          <select name="status" id="status" className={styles["select"]}>
+            <option value="pending">Pending</option>
+            <option value="inProgress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+
+        <div className={styles["form-group"]}>
+          <label className={styles["label"]} htmlFor="dueDate">
+            Due Date
+          </label>
+          <input
+            type="date"
+            name="dueDate"
+            id="dueDate"
+            className={styles["dateInput"]}
+            required
+          />
+        </div>
+
+        <button type="submit" className={styles["submitButton"]}>
+          Create Task
+        </button>
+      </form>
+
       {error && (
-        <ul>
-          {(error as unknown as string[]).map((errorMessage: string) => (
-            <li>{errorMessage}</li>
+        <ul className={styles["errorList"]}>
+          {(error as unknown as string[]).map((errorMessage: string, index) => (
+            <li key={index} className={styles["errorItem"]}>
+              {errorMessage}
+            </li>
           ))}
         </ul>
       )}
-    </>
+    </div>
   );
 };
