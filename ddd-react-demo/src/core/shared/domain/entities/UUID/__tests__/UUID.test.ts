@@ -10,7 +10,6 @@ describe("UUID ValueObject", () => {
     const validUUID = uuidv4();
 
     const result = UUID.create(validUUID);
-    console.log("🚀 ~ it ~ result:", result);
 
     expect(result.ok).toBe(true);
     expect(Result.isOk(result) && result.value).toBe(validUUID);
