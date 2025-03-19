@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { Result } from "../../../../shared/domain/Result/Result";
+import { Result } from "../../../../../shared/domain/Result/Result";
 import { TimestampDate } from "../TimestampDate";
 
 describe("TimestampDate.create", () => {

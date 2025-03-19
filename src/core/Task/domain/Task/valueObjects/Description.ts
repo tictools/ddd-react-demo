@@ -1,9 +1,9 @@
 import {
   type OperationResult,
   Result,
-} from "../../../shared/domain/Result/Result";
+} from "../../../../shared/domain/Result/Result";
 // import { type OperationResult, Result } from "core/shared/Result";
-import type { ValueObject } from "../../../shared/domain/valueObjects/types";
+import type { ValueObject } from "../../../../shared/domain/valueObjects/types";
 
 function create(description: string): OperationResult<string> {
   const isValid = hasContent(description);

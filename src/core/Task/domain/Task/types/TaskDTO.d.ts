@@ -5,8 +5,8 @@ export type TaskDTO = {
   title: string;
   description: string;
   status: TaskStatus;
-  "created-at": number;
   "due-date": number;
+  "created-at": number;
   "user-uuid": string;
 };
 

@@ -1,5 +1,5 @@
-import { type PartialTaskValues } from "../../../../../core/Task/domain/Task/TaskValues";
-import { type TaskStatus } from "../../../../../core/Task/domain/valueObjects/Status";
+import { type PartialTaskValues } from "../../../../../core/Task/domain/Task/types/TaskValues";
+import { type TaskStatus } from "../../../../../core/Task/domain/Task/valueObjects/Status";
 import { useCreateTaskCase } from "../../../../api/Task/mutations/useCreateTaskCase";
 
 export const useCreateTaskForm = () => {

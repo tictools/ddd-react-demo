@@ -1,4 +1,4 @@
-import { TaskValues } from "core/Task/domain/Task/TaskValues";
+import { TaskValues } from "core/Task/domain/Task/types/TaskValues";
 import { useGetAllTasksCase } from "../../../api/Task/queries/useGetAllTasksCase";
 import { Heading3 } from "../../atoms/Heading3/Heading3";
 import { List } from "../../atoms/List/List";

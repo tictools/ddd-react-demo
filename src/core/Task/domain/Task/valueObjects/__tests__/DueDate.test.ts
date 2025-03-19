@@ -7,7 +7,7 @@ import {
   MockInstance,
   vi,
 } from "vitest";
-import { Result } from "../../../../shared/domain/Result/Result";
+import { Result } from "../../../../../shared/domain/Result/Result";
 import { DueDate } from "../DueDate";
 
 describe("DueDate.create", () => {

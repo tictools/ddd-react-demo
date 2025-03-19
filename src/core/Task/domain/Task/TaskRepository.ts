@@ -1,4 +1,4 @@
-import type { PartialTaskDTO, TaskDTO } from "./TaskDTO.d";
+import type { PartialTaskDTO, TaskDTO } from "./types/TaskDTO";
 
 export interface TaskRepository {
   getAllTasks(): Promise<TaskDTO[]>;

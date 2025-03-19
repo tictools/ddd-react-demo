@@ -1,5 +1,5 @@
-import { TaskDTO } from "../../domain/Task/TaskDTO";
 import { TaskRepository } from "../../domain/Task/TaskRepository";
+import { TaskDTO } from "../../domain/Task/types/TaskDTO";
 
 export class JsonServerTaskRepository implements TaskRepository {
   private API_URL = "http://localhost:3000/tasks";

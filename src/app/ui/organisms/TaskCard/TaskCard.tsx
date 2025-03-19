@@ -1,4 +1,4 @@
-import { TaskValues } from "../../../../core/Task/domain/Task/TaskValues";
+import { TaskValues } from "../../../../core/Task/domain/Task/types/TaskValues";
 import { classNames } from "../../../services/CSSService/CSSService";
 import { DateText } from "../../atoms/DataText/DataText";
 import { Heading4 } from "../../atoms/Heading4/Heading4";

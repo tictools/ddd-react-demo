@@ -1,10 +1,10 @@
-import type {
-  PartialTaskValues,
-  TaskValues,
-} from "../../../Task/domain/Task/TaskValues";
 import type { UUIDRepository } from "../../../shared/domain/entities/UUID/UUIDRepository";
 import { Task } from "../../domain/Task/Task";
 import type { TaskRepository } from "../../domain/Task/TaskRepository";
+import type {
+  PartialTaskValues,
+  TaskValues,
+} from "../../domain/Task/types/TaskValues";
 import { TaskMapper } from "../TaskMapper/TaskMapper";
 
 type Dependencies = {

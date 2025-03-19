@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { type TaskDTO } from "../../../domain/Task/TaskDTO.d";
+import { type TaskDTO } from "../../../domain/Task/types/TaskDTO";
 import { JsonServerTaskRepository } from "../JsonServerTaskRepository";
 
 describe("JsonServerTaskRepository", () => {

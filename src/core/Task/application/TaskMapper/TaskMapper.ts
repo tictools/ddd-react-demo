@@ -1,7 +1,7 @@
 import { OperationResult } from "../../../shared/domain/Result/Result";
 import { Task } from "../../domain/Task/Task";
-import { type TaskDTO } from "../../domain/Task/TaskDTO";
-import { type TaskValues } from "../../domain/Task/TaskValues";
+import { type TaskDTO } from "../../domain/Task/types/TaskDTO";
+import { type TaskValues } from "../../domain/Task/types/TaskValues";
 
 const toDomain = (dto: TaskDTO): OperationResult<TaskValues> =>
   Task.create({

@@ -5,12 +5,12 @@ import {
 } from "../../../shared/domain/Result/Result";
 import { UUID } from "../../../shared/domain/entities/UUID/UUID";
 // import { failure, Result, success } from "../../shared/result";
-import { Description } from "../valueObjects/Description";
-import { DueDate } from "../valueObjects/DueDate";
-import { Status } from "../valueObjects/Status";
-import { TimestampDate } from "../valueObjects/TimestampDate";
-import { Title } from "../valueObjects/Title";
-import { type TaskValues } from "./TaskValues.d";
+import { type TaskValues } from "./types/TaskValues";
+import { Description } from "./valueObjects/Description";
+import { DueDate } from "./valueObjects/DueDate";
+import { Status } from "./valueObjects/Status";
+import { TimestampDate } from "./valueObjects/TimestampDate";
+import { Title } from "./valueObjects/Title";
 
 function create(props: TaskValues): OperationResult<TaskValues, string[]> {
   const taskPropsResult = Guard.againstNullOrUndefined([

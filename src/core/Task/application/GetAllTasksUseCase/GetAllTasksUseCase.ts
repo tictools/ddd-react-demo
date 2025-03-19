@@ -1,4 +1,4 @@
-import { TaskValues } from "core/Task/domain/Task/TaskValues";
+import { TaskValues } from "core/Task/domain/Task/types/TaskValues";
 import { SuccessResult } from "../.././../shared/domain/Result/Result";
 import { TaskRepository } from "../../domain/Task/TaskRepository";
 import { TaskMapper } from "../TaskMapper/TaskMapper";

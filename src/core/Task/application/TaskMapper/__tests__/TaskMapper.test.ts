@@ -3,8 +3,8 @@ import {
   FailureResult,
   SuccessResult,
 } from "../../../../shared/domain/Result/Result";
-import { TaskDTO } from "../../../domain/Task/TaskDTO";
-import { TaskValues } from "../../../domain/Task/TaskValues";
+import { TaskDTO } from "../../../domain/Task/types/TaskDTO";
+import { TaskValues } from "../../../domain/Task/types/TaskValues";
 import { TaskMapper } from "../TaskMapper";
 
 // vi.spyOn(Task, "create");

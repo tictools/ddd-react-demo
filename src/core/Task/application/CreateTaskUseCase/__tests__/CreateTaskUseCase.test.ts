@@ -1,7 +1,10 @@
 import { beforeEach, describe, expect, it, MockInstance, vi } from "vitest";
 import type { UUIDRepository } from "../../../../shared/domain/entities/UUID/UUIDRepository";
 import type { TaskRepository } from "../../../domain/Task/TaskRepository";
-import { PartialTaskValues, TaskValues } from "../../../domain/Task/TaskValues";
+import {
+  PartialTaskValues,
+  TaskValues,
+} from "../../../domain/Task/types/TaskValues";
 import { TaskMapper } from "../../TaskMapper/TaskMapper";
 import { CreateTaskUseCase } from "../CreateTaskUseCase";
 

@@ -1,6 +1,6 @@
 import { describe, it, MockInstance, vi } from "vitest";
 import type { TaskRepository } from "../../../domain/Task/TaskRepository";
-import { TaskValues } from "../../../domain/Task/TaskValues";
+import { TaskValues } from "../../../domain/Task/types/TaskValues";
 import { TaskMapper } from "../../TaskMapper/TaskMapper";
 import { GetAllTasksUseCase } from "../GetAllTasksUseCase";
 
